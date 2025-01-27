@@ -22,14 +22,19 @@ const getArea = (shape: Shape) => {
 }
 
 //functions in TS
-type GreetFunction = (text: string) => void;
+type GreetFunction = {
+    (text: string): void;
+    myName: string;
+};
 
 const greeter = (greetFunction: GreetFunction) => {
-    greetFunction("Hello!");
+    greetFunction(`Hello ${greetFunction.myName}!`);
 }
 
 const printToConsole = (text: string) => {
     console.log(text);
 }
+
+printToConsole.myName = "Adrian";
 
 greeter(printToConsole);
