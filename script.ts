@@ -1,3 +1,4 @@
+//interfaces and types
 interface Circle {
     kind: "circle";
     radius: number;
@@ -19,3 +20,16 @@ const getArea = (shape: Shape) => {
         return Math.PI * (shape.radius ** 2); 
     }
 }
+
+//functions in TS
+type GreetFunction = (text: string) => void;
+
+const greeter = (greetFunction: GreetFunction) => {
+    greetFunction("Hello!");
+}
+
+const printToConsole = (text: string) => {
+    console.log(text);
+}
+
+greeter(printToConsole);

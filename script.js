@@ -7,3 +7,11 @@ const getArea = (shape) => {
         return Math.PI * (Math.pow(shape.radius, 2));
     }
 };
+//functions in TS
+const greeter = (greetFunction) => {
+    greetFunction("Hello!");
+};
+const printToConsole = (text) => {
+    console.log(text);
+};
+greeter(printToConsole);
