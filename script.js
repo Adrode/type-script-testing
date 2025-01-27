@@ -15,3 +15,8 @@ const printToConsole = (text) => {
 };
 printToConsole.myName = "Adrian";
 greeter(printToConsole);
+//generic functions
+const firstElement = (array) => array[0];
+const numbers = [4, 9];
+const firstNumber = firstElement([]);
+console.log(`First number: ${firstNumber}`);

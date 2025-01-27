@@ -21,7 +21,7 @@ const getArea = (shape: Shape) => {
     }
 }
 
-//functions in TS
+//basic functions in TS and typing function property
 type GreetFunction = {
     (text: string): void;
     myName: string;
@@ -38,3 +38,14 @@ const printToConsole = (text: string) => {
 printToConsole.myName = "Adrian";
 
 greeter(printToConsole);
+
+//generic functions
+const firstElement = <ItemType>(array: ItemType[]): ItemType | undefined =>
+    array[0];
+
+const numbers = [4, 9];
+const firstNumber = firstElement(numbers);
+console.log(`First number: ${firstNumber}`);
+
+const animals = ["Dog", "Parrot", "Monkey"];
+const firstAnimal = firstElement(animals);
