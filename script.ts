@@ -43,9 +43,24 @@ greeter(printToConsole);
 const firstElement = <ItemType>(array: ItemType[]): ItemType | undefined =>
     array[0];
 
+//here function knows that firstNumber is a number or undefined type
 const numbers = [4, 9];
 const firstNumber = firstElement(numbers);
 console.log(`First number: ${firstNumber}`);
 
+//here function knows that firstAnimal is a string or undefined type
 const animals = ["Dog", "Parrot", "Monkey"];
 const firstAnimal = firstElement(animals);
+
+//in operator
+type Fish = { swim: () => void; };
+type Bird = { fly: () => void; };
+type Human = { fly?: () => void; swim?: () => void; };
+
+const move = (animal: Fish | Bird | Human) => {
+    if("fly" in animal) {
+        animal.fly?.();
+    } else {
+        animal.swim?.();
+    }
+}

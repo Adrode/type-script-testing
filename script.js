@@ -17,6 +17,13 @@ printToConsole.myName = "Adrian";
 greeter(printToConsole);
 //generic functions
 const firstElement = (array) => array[0];
+//here function knows that firstNumber is a number or undefined type
 const numbers = [4, 9];
-const firstNumber = firstElement([]);
+const firstNumber = firstElement(numbers);
 console.log(`First number: ${firstNumber}`);
+//here function knows that firstAnimal is a string or undefined type
+const animals = ["Dog", "Parrot", "Monkey"];
+const firstAnimal = firstElement(animals);
+const showCar = (car) => {
+    console.log(`Brand: ${car.brand}`);
+};
