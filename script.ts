@@ -12,32 +12,14 @@ interface Square {
 type Shape = Circle | Square;
 
 const getArea = (shape: Shape) => {
-    if(shape.kind === "square") {
+    if (shape.kind === "square") {
         return shape.sideLength ** 2;
     }
 
-    if(shape.kind === "circle") {
-        return Math.PI * (shape.radius ** 2); 
+    if (shape.kind === "circle") {
+        return Math.PI * (shape.radius ** 2);
     }
 }
-
-//basic functions in TS and typing function property
-type GreetFunction = {
-    (text: string): void;
-    myName: string;
-};
-
-const greeter = (greetFunction: GreetFunction) => {
-    greetFunction(`Hello ${greetFunction.myName}!`);
-}
-
-const printToConsole = (text: string) => {
-    console.log(text);
-}
-
-printToConsole.myName = "Adrian";
-
-greeter(printToConsole);
 
 //generic functions
 const firstElement = <ItemType>(array: ItemType[]): ItemType | undefined =>
@@ -52,15 +34,53 @@ console.log(`First number: ${firstNumber}`);
 const animals = ["Dog", "Parrot", "Monkey"];
 const firstAnimal = firstElement(animals);
 
-//in operator
+//"in" operator
 type Fish = { swim: () => void; };
 type Bird = { fly: () => void; };
 type Human = { fly?: () => void; swim?: () => void; };
 
 const move = (animal: Fish | Bird | Human) => {
-    if("fly" in animal) {
+    if ("fly" in animal) {
         animal.fly?.();
     } else {
         animal.swim?.();
     }
 }
+
+//"is" operator
+/* type Dog = { run: () => void; };
+type Shark = { swim: () => void; };
+
+
+let animal: Dog | Shark = getPet();
+
+const isDog = (pet: Dog | Shark): pet is Dog => "run" in pet;
+
+if (isDog(animal)) {
+    animal.run();
+} else {
+    animal.swim();
+} */
+
+//basic functions
+const greeter = (greetFunction: (text: string) => void) => {
+    console.log(greetFunction("Hej!"));
+}
+
+const printToConsole = (text: string) => {
+    console.log(text);
+}
+
+greeter(printToConsole);
+
+//function with 2 types of arguments
+
+const map = <InputItemType, OutputItemType>(
+    array: InputItemType[],
+    transformFunction: (element: InputItemType) => OutputItemType
+) => array.map(transformFunction);
+
+const floatNumbers = [2.15, 4.76];
+const transformedNumbers = map(floatNumbers, (number) => number.toFixed(1));
+
+console.log(transformedNumbers);
