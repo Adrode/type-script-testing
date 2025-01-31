@@ -87,8 +87,8 @@ console.log(transformedNumbers);
 
 const longer = <ValueType extends { length: number }>(
     value1: ValueType,
-    value2: ValueType ) => {
-    if(value1 > value2) {
+    value2: ValueType) => {
+    if (value1 > value2) {
         return value1;
     } else {
         return value2;
@@ -97,6 +97,12 @@ const longer = <ValueType extends { length: number }>(
 
 console.log(longer("xzxz", "xxx"));
 console.log(longer([], [1]));
-//there is some issue, because function doesn't return
-//longer value, but just the second value
 
+//function that merges 2 tables
+
+const mergeArrays = <ArrayType>(array1: ArrayType[], array2: ArrayType[]) => [
+    ...array1,
+    ...array2
+];
+
+console.log(mergeArrays<number | string>([1, 2], ["opaska", "małpa"]));

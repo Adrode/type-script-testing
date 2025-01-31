@@ -61,5 +61,9 @@ const longer = (value1, value2) => {
 };
 console.log(longer("xzxz", "xxx"));
 console.log(longer([], [1]));
-//there is some issue, because function doesn't return
-//longer value, but just the second value
+//function that merges 2 tables
+const mergeArrays = (array1, array2) => [
+    ...array1,
+    ...array2
+];
+console.log(mergeArrays([1, 2], ["opaska", "małpa"]));
