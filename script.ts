@@ -51,7 +51,6 @@ const move = (animal: Fish | Bird | Human) => {
 /* type Dog = { run: () => void; };
 type Shark = { swim: () => void; };
 
-
 let animal: Dog | Shark = getPet();
 
 const isDog = (pet: Dog | Shark): pet is Dog => "run" in pet;
@@ -67,9 +66,7 @@ const greeter = (greetFunction: (text: string) => void) => {
     console.log(greetFunction("Hej!"));
 }
 
-const printToConsole = (text: string) => {
-    console.log(text);
-}
+const printToConsole = (text: string) => text;
 
 greeter(printToConsole);
 
@@ -84,3 +81,22 @@ const floatNumbers = [2.15, 4.76];
 const transformedNumbers = map(floatNumbers, (number) => number.toFixed(1));
 
 console.log(transformedNumbers);
+
+//function that accepts specific types of arguments
+//this function takes 2 values and return one, which is longer
+
+const longer = <ValueType extends { length: number }>(
+    value1: ValueType,
+    value2: ValueType ) => {
+    if(value1 > value2) {
+        return value1;
+    } else {
+        return value2;
+    }
+};
+
+console.log(longer("xzxz", "xxx"));
+console.log(longer([], [1]));
+//there is some issue, because function doesn't return
+//longer value, but just the second value
+
