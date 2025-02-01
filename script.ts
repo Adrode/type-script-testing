@@ -128,3 +128,12 @@ const filteredNumbers1 = filterArray1(numbers2, (number) => number % 2 === 0);
 const filteredNumbers2 = filterArray2(numbers2, (number) => number % 2 === 0);
 console.log(filteredNumbers1);
 console.log(filteredNumbers2);
+
+//optional arguments
+//argument name can be a string or an undefined, that's why we need a ternary
+const greet = (name?: string) => {
+    console.log(`Hi${name !== undefined ? `, ${name}` : ""}`)
+}
+
+greet("Adrian");
+greet();
