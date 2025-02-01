@@ -67,3 +67,12 @@ const mergeArrays = (array1, array2) => [
     ...array2
 ];
 console.log(mergeArrays([1, 2], ["opaska", "małpa"]));
+//functions that filters passed table
+//2 types of functions for example
+const filterArray1 = (array, filteringFunction) => array.filter(filteringFunction);
+const filterArray2 = (array, filterFunction) => array.filter(filterFunction);
+const numbers2 = [1, 2, 3, 4];
+const filteredNumbers1 = filterArray1(numbers2, (number) => number % 2 === 0);
+const filteredNumbers2 = filterArray2(numbers2, (number) => number % 2 === 0);
+console.log(filteredNumbers1);
+console.log(filteredNumbers2);

@@ -106,3 +106,25 @@ const mergeArrays = <ArrayType>(array1: ArrayType[], array2: ArrayType[]) => [
 ];
 
 console.log(mergeArrays<number | string>([1, 2], ["opaska", "małpa"]));
+
+//functions that filters passed table
+//2 types of functions for example
+
+const filterArray1 = <InputType>(
+    array: InputType[],
+    filteringFunction: (item: InputType) => boolean 
+) => array.filter(filteringFunction);
+
+const filterArray2 = <
+    ItemType,
+    FilterFunction extends (item: ItemType) => boolean
+>(
+    array: ItemType[],
+    filterFunction: FilterFunction
+) => array.filter(filterFunction);
+
+const numbers2 = [1, 2, 3, 4];
+const filteredNumbers1 = filterArray1(numbers2, (number) => number % 2 === 0);
+const filteredNumbers2 = filterArray2(numbers2, (number) => number % 2 === 0);
+console.log(filteredNumbers1);
+console.log(filteredNumbers2);
