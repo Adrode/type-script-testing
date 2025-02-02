@@ -181,3 +181,15 @@ array.push();
 
 //type never
 //if a function return nothing, then TS acknowledges it as type never
+
+const error = () => {
+    throw new Error("Something went wrong!");
+}
+
+//type function
+//this type defines any function, that gets any arguments and returns any value
+//IT IS NOT RECOMENDED TO USE IT!
+
+const doSomething2 = (someFunction: Function) => someFunction("text");
+const doSomething3 = (someFunction: (text: string) => void) => someFunction("text");
+
