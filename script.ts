@@ -164,3 +164,20 @@ const value: object = [];
 
 //type unknown
 
+const function1 = (value: any) => {
+    value.doSomething();
+}
+
+const function2 = (value: unknown) => {
+    value.doSomething();
+}
+
+const parseJSON = (jsonString: string): unknown => JSON.parse(jsonString);
+const array = parseJSON("blahBlah");
+array.push();
+
+//if we have any, we can do whatever we want to a value
+//if we have unknown, we can't do anything to a value
+
+//type never
+//if a function return nothing, then TS acknowledges it as type never
