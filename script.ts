@@ -156,3 +156,8 @@ const customMap = <InputItemType, OutputItemType>(
 const animals2 = ["monkey", "donkey"];
 console.log(animals2.map((animal) => `${animal}`));
 console.log(customMap([1, 2, 3, 4, 5, 6], item => item + 1));
+
+//type object
+//type object is everything that IS NOT a primitive type
+
+const value: object = [];
