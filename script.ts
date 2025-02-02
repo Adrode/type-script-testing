@@ -137,3 +137,22 @@ const greet = (name?: string) => {
 
 greet("Adrian");
 greet();
+
+//function like map without using .map()
+
+const customMap = <InputItemType, OutputItemType>(
+    array: InputItemType[],
+    mapFunction: (item: InputItemType, index: number) => OutputItemType
+) => {
+    const newArray = [] as OutputItemType[];
+
+    array.forEach((item, index) => {
+        newArray.push(mapFunction(item, index))
+    });
+
+    return newArray;
+}
+
+const animals2 = ["monkey", "donkey"];
+console.log(animals2.map((animal) => `${animal}`));
+console.log(customMap([1, 2, 3, 4, 5, 6], item => item + 1));
