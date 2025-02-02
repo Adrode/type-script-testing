@@ -161,3 +161,6 @@ console.log(customMap([1, 2, 3, 4, 5, 6], item => item + 1));
 //type object is everything that IS NOT a primitive type
 
 const value: object = [];
+
+//type unknown
+
