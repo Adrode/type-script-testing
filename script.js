@@ -94,3 +94,34 @@ const customMap = (array, mapFunction) => {
 const animals2 = ["monkey", "donkey"];
 console.log(animals2.map((animal) => `${animal}`));
 console.log(customMap([1, 2, 3, 4, 5, 6], item => item + 1));
+//type object
+//type object is everything that IS NOT a primitive type
+const value = [];
+//type unknown
+/* const function1 = (value: any) => {
+    value.doSomething();
+}
+
+const function2 = (value: unknown) => {
+    //value.doSomething();
+}
+
+const parseJSON = (jsonString: string): unknown => JSON.parse(jsonString);
+const array = parseJSON("blahBlah");
+array.push(); */
+//if we have any, we can do whatever we want to a value
+//if we have unknown, we can't do anything to a value
+//type never
+//if a function return nothing, then TS acknowledges it as type never
+const error = () => {
+    throw new Error("Something went wrong!");
+};
+//type function
+//this type defines any function, that gets any arguments and returns any value
+//IT IS NOT RECOMENDED TO USE IT!
+const doSomething2 = (someFunction) => someFunction("text");
+const doSomething3 = (someFunction) => someFunction("text");
+//rest parameters
+const multiply = (factor, ...numbers) => numbers.map((number) => factor * number);
+const numbers3 = [1, 2, 3];
+console.log(multiply(5, ...numbers3));

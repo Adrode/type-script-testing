@@ -164,17 +164,17 @@ const value: object = [];
 
 //type unknown
 
-const function1 = (value: any) => {
+/* const function1 = (value: any) => {
     value.doSomething();
 }
 
 const function2 = (value: unknown) => {
-    value.doSomething();
+    //value.doSomething();
 }
 
 const parseJSON = (jsonString: string): unknown => JSON.parse(jsonString);
 const array = parseJSON("blahBlah");
-array.push();
+array.push(); */
 
 //if we have any, we can do whatever we want to a value
 //if we have unknown, we can't do anything to a value
@@ -192,4 +192,12 @@ const error = () => {
 
 const doSomething2 = (someFunction: Function) => someFunction("text");
 const doSomething3 = (someFunction: (text: string) => void) => someFunction("text");
+
+//rest parameters
+
+const multiply = (factor: number, ...numbers: number[]) =>
+    numbers.map((number) => factor * number);
+
+const numbers3 = [1, 2, 3];
+console.log(multiply(5, ...numbers3));
 
