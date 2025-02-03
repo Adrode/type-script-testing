@@ -168,3 +168,28 @@
     const returnTrue = () => true;
     const valueTrue = returnTrue();
 }
+//readonly object property
+{
+    /* const doSomething = (someObject: SomeObject) => {
+        console.log(someObject.property);
+        someObject.property = "new value";
+        someObject.person.name = "Adrian";
+        someObject.person = {};
+    } */
+}
+{
+    const writablePerson = {
+        name: "Adrian",
+        age: 25,
+    };
+    const readonlyPerson = writablePerson;
+    writablePerson.age = 30;
+    //readonlyPerson.age = 30;
+}
+//index signature
+{
+    const colors = {
+        blue: "#00f",
+        red: "#f00",
+    };
+}

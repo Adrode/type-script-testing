@@ -259,10 +259,43 @@
         }
     }
 
-    const doSomething = (someObject: SomeObject) => {
+    /* const doSomething = (someObject: SomeObject) => {
         console.log(someObject.property);
         someObject.property = "new value";
         someObject.person.name = "Adrian";
         someObject.person = {};
+    } */
+}
+{
+    interface WritablePerson {
+        name: string;
+        age: number;
+    }
+
+    interface ReadonlyPerson {
+        readonly name: string;
+        readonly age: number;
+    }
+
+    const writablePerson: WritablePerson = {
+        name: "Adrian",
+        age: 25,
+    }
+
+    const readonlyPerson: ReadonlyPerson = writablePerson;
+
+    writablePerson.age = 30;
+    //readonlyPerson.age = 30;
+}
+
+//index signature
+{
+    interface Colors {
+        [index: string]: string;
+    }
+
+    const colors = {
+        blue: "#00f",
+        red: "#f00",
     }
 }
