@@ -214,3 +214,13 @@ interface RectangleArea {
 const rectangleArea = ({ sideA, sideB }: RectangleArea) => sideA * sideB;
 
 console.log(rectangleArea({ sideA: 5, sideB: 6 }));
+
+//assigning functions with void
+
+type FunctionType = () => void;
+
+const doNothing: FunctionType = () => {};
+const returnTrue: FunctionType = () => true;
+
+
+const valueTrue = returnTrue();
