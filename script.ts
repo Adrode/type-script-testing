@@ -112,7 +112,7 @@ console.log(mergeArrays<number | string>([1, 2], ["opaska", "małpa"]));
 
 const filterArray1 = <InputType>(
     array: InputType[],
-    filteringFunction: (item: InputType) => boolean 
+    filteringFunction: (item: InputType) => boolean
 ) => array.filter(filteringFunction);
 
 const filterArray2 = <
@@ -201,3 +201,16 @@ const multiply = (factor: number, ...numbers: number[]) =>
 const numbers3 = [1, 2, 3];
 console.log(multiply(5, ...numbers3));
 
+const numbersToPow = [2, 5] as const;
+console.log(Math.pow(...numbersToPow));
+
+//destructuring of parameters
+
+interface RectangleArea {
+    sideA: number;
+    sideB: number;
+}
+
+const rectangleArea = ({ sideA, sideB }: RectangleArea) => sideA * sideB;
+
+console.log(rectangleArea({ sideA: 5, sideB: 6 }));

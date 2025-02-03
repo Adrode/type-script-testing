@@ -125,3 +125,8 @@ const doSomething3 = (someFunction) => someFunction("text");
 const multiply = (factor, ...numbers) => numbers.map((number) => factor * number);
 const numbers3 = [1, 2, 3];
 console.log(multiply(5, ...numbers3));
+const numbersToPow = [2, 5];
+console.log(Math.pow(...numbersToPow));
+//destructuring of parameters
+const rectangleArea = ({ sideA, sideB }) => sideA * sideB;
+console.log(rectangleArea({ sideA: 5, sideB: 6 }));
