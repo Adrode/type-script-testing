@@ -325,5 +325,23 @@
 
 //intersection types
 {
+    interface Colorful {
+        color: string;
+    }
+
+    interface Circle {
+        radius: number;
+    }
+
+    type ColorfulCircle = Colorful & Circle;
+
+    const circle: ColorfulCircle = {
+        color: "red",
+        radius: 5,
+    }
+}
+
+//generic object types
+{
     
 }
