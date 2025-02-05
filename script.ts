@@ -363,3 +363,13 @@
     type OneOrMany<Type> = Type | Type[];
     type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>;
 }
+
+//readonly arrays
+{
+    const doSomething = (array: ReadonlyArray<number>) => {
+        array[5];
+        array.push(10);
+    }
+
+    const numbers: readonly number[] = [3, 4, 5];
+}
