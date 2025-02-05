@@ -131,8 +131,8 @@
     const function2 = (value) => {
         //value.doSomething();
     };
-    const parseJSON = (jsonString) => JSON.parse(jsonString);
-    const array = parseJSON("blahBlah");
+    //const parseJSON = (jsonString: string): unknown => JSON.parse(jsonString);
+    //const array = parseJSON("blahBlah");
     //array.push();
 }
 //if we have any, we can do whatever we want to a value
@@ -192,4 +192,12 @@
         blue: "#00f",
         red: "#f00",
     };
+}
+//interface extensions
+{
+    const dogo = {
+        name: "Hauczek",
+        bark: () => console.log("Hau Hau"),
+    };
+    dogo.bark();
 }
