@@ -197,7 +197,21 @@
 {
     const dogo = {
         name: "Hauczek",
-        bark: () => console.log("Hau Hau"),
+        legs: 4,
+        bark: () => console.log(`Hau Hau`),
     };
     dogo.bark();
+}
+//intersection types
+{
+    const circle = {
+        color: "red",
+        radius: 5,
+    };
+}
+//generic object types
+{
+}
+//generic helpers
+{
 }

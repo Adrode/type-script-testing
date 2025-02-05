@@ -343,5 +343,23 @@
 
 //generic object types
 {
-    
+    interface APIResponse<DataType> {
+        statusCode: number;
+        error: boolean;
+        data: DataType;
+    }
+
+    interface User {
+        id: number;
+        name: string;
+    }
+
+    type APIUserResponse = APIResponse<User>;
+}
+
+//generic helpers
+{
+    type OrNull<Type> = Type | null;
+    type OneOrMany<Type> = Type | Type[];
+    type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>;
 }
