@@ -409,3 +409,24 @@
 }
 
 //typeof and keyof connection
+{
+    const person = {
+        name: "Adrian",
+        surname: "Woźniak"
+    }
+
+    type Person = typeof person;
+    type PersonProperty = keyof Person;
+}
+
+//using typeof to extract the return type of a function
+{
+    const getPerson = () => ({
+        name: "Adrian",
+        surname: "Woźniak"
+    })
+
+    type PersonType = ReturnType<typeof getPerson>;
+}
+
+//using typeof to extract type of an element in an array
