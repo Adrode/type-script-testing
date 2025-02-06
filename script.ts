@@ -379,7 +379,31 @@
 
 //topple
 {
-    const array: [string, number, number?] = ["tekst", 5];
+    const array: readonly [string, number, ...boolean[]] = [
+        "tekst", 5, true, true, false
+    ];
 
-    const [myString, myArray] = array;
+    const [myString, myArray, myBoolean, myBoolean2] = array;
+}
+
+//keyof operator
+{
+    interface Person {
+        name: string;
+        surname: string;
+        age: number;
+    }
+
+    type PersonProperty = keyof Person;
+
+    const personProperty: PersonProperty = "age";
+}
+
+//typeof operator
+{
+    const name = "Adrian";
+    console.log(typeof name); // "string"
+
+    const surname: typeof name = "Adrian";
+    //typeof name is an amnotation to literal type
 }
