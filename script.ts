@@ -407,3 +407,5 @@
     const surname: typeof name = "Adrian";
     //typeof name is an amnotation to literal type
 }
+
+//typeof and keyof connection
