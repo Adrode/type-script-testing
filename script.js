@@ -215,3 +215,18 @@
 //generic helpers
 {
 }
+//readonly arrays
+{
+    const doSomething = (array) => {
+        array[5];
+        //array.push(10);
+    };
+    let numbers = [3, 4, 5];
+    const readonlyNumbers = numbers;
+    //numbers = readonlyNumbers;
+}
+//topple
+{
+    const array = ["tekst", 5];
+    const [myString, myArray] = array;
+}

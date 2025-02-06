@@ -368,8 +368,18 @@
 {
     const doSomething = (array: ReadonlyArray<number>) => {
         array[5];
-        array.push(10);
+        //array.push(10);
     }
 
-    const numbers: readonly number[] = [3, 4, 5];
+    let numbers = [3, 4, 5]
+    const readonlyNumbers: readonly number[] = numbers;
+
+    //numbers = readonlyNumbers;
+}
+
+//topple
+{
+    const array: [string, number, number?] = ["tekst", 5];
+
+    const [myString, myArray] = array;
 }
