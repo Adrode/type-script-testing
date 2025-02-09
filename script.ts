@@ -447,8 +447,8 @@
 //mapped types
 {
     interface Person {
-        name: string;
-        age: number;
+        name?: string;
+        readonly age: number;
     }
 
     type PersonStrings = {
@@ -457,5 +457,25 @@
 
     type PersonOptional = {
         [Property in keyof Person]?: string;
+    }
+
+    type PersonConcrete = {
+        -readonly [Property in keyof Person]-?: string;
+    }
+}
+
+//types based on literal types
+{
+    type Currency = "PLN" | "EUR" | "GBP";
+
+    type CurrencyConvert = `${Lowercase<Currency>}-${Currency}`;
+
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    type MyPerson = {
+        [Property in keyof Person as `my${Capitalize<Property>}`]: Person[Property];
     }
 }
