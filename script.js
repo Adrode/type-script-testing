@@ -227,6 +227,43 @@
 }
 //topple
 {
-    const array = ["tekst", 5];
-    const [myString, myArray] = array;
+    const array = [
+        "tekst", 5, true, true, false
+    ];
+    const [myString, myArray, myBoolean, myBoolean2] = array;
+}
+//keyof operator
+{
+    const personProperty = "age";
+}
+//typeof operator
+{
+    const name = "Adrian";
+    console.log(typeof name); // "string"
+    const surname = "Adrian";
+    console.log(name);
+    //typeof name is an amnotation to literal type
+}
+//typeof and keyof connection
+{
+    const person = {
+        name: "Adrian",
+        surname: "Woźniak"
+    };
+    const person2 = "name";
+    console.log(person2);
+}
+//using typeof to extract the return type of a function
+{
+    const getPerson = () => ({
+        name: "Adrian",
+        surname: "Woźniak"
+    });
+}
+//using typeof to extract type of an element in an array, using index
+{
+    const persons = [
+        { name: "Adrian", age: 25 },
+        { name: "Doggo", age: 5 }
+    ];
 }

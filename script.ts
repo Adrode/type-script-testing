@@ -427,6 +427,35 @@
     })
 
     type PersonType = ReturnType<typeof getPerson>;
+    type Person = PersonType["name"];
 }
 
-//using typeof to extract type of an element in an array
+//using typeof to extract type of an element in an array, using index
+{
+    const persons = [
+        { name: "Adrian", age: 25 },
+        { name: "Doggo", age: 5 }
+    ];
+
+    type Person = typeof persons[number];
+
+    type ConditionalType = { name: string; age: number } extends Person ?
+        number :
+        string;
+}
+
+//mapped types
+{
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    type PersonStrings = {
+        [Property in keyof Person]: string;
+    }
+
+    type PersonOptional = {
+        [Property in keyof Person]?: string;
+    }
+}
