@@ -434,7 +434,7 @@
 {
     const persons = [
         { name: "Adrian", age: 25 },
-        { name: "Doggo", age: 5 }
+        { name: "Doggo", age: 5 },
     ];
 
     type Person = typeof persons[number];
@@ -476,6 +476,7 @@
     }
 
     type MyPerson = {
-        [Property in keyof Person as `my${Capitalize<Property>}`]: Person[Property];
+        [Property in keyof Person as `my${Capitalize<Property>}`]:
+        Person[Property];
     }
 }
