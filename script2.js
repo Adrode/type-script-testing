@@ -1,9 +1,8 @@
-const sumValues = (data) => {
-  const valuesArray = Object.values(data);
-  let acc = 0;
-  let sum;
-  for (let i of valuesArray) {
-    sum = acc += i;
+const flatten = (array) => {
+  for (let i = 0; i <= array.length; i++) {
+    if (Array.isArray(array[i])) {
+      array.splice(i, -1, ...array[i])
+    }
   }
-  return sum;
-};
+  return array;
+}; 
