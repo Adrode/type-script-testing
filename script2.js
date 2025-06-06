@@ -1,8 +1,10 @@
-const flatten = (array) => {
-  for (let i = 0; i <= array.length; i++) {
-    if (Array.isArray(array[i])) {
-      array.splice(i, -1, ...array[i])
-    }
+const invert = (object) => {
+  let inverted = {};
+  let value;
+  for (let key in object) {
+    console.log(object[key]);
+    value = object[key];
+    inverted = { ...inverted, [value]: key }
   }
-  return array;
-}; 
+  return inverted;
+};
